@@ -1,0 +1,41 @@
+.no-js #mobile-menu__toggler {
+    display: none;
+  }
+  .no-js .aw-header__nav {
+    display: block;
+  }
+  .no-js .aw-header__logo {
+    margin-left: unset;
+  }
+  .transition {
+    transition: all 0.2s ease-in-out;
+  }
+  .order-1 {
+    order: 1;
+  }
+  .order-2 {
+    order: 2;
+  }
+  .order-3 {
+    order: 3;
+  }
+  /* use '@screen lg {...}' with npm version */
+  @media (min-width: 1024px) {
+    .lg\:order-1 {
+      order: 1;
+    }
+    .lg\:order-2 {
+      order: 2;
+    }
+    .lg\:order-3 {
+      order: 3;
+    }
+  }
+  .aw-hero {
+    background: rgb(26, 32, 44);
+    background: linear-gradient(
+      350deg,
+      rgba(26, 32, 44, 1) 0%,
+      rgba(107, 70, 193, 1) 100%
+    );
+  }
