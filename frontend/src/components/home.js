@@ -1,13 +1,49 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const Home = () =>{
+class Home extends Component{
+    async postData(){
+        
+        try {
+            let result = await fetch('http://127.0.0.1:8000/api/shit/', {
+                method: 'post',
+                mode: 'no-cors',
+                headers:{
+                // 'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                },
+                body:  JSON.stringify({
+                    "my_text": "s1",
+                })
+            });
+            console.log('Result:' + result)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    render(){
     return(
-    <div>
-        <section class="aw-hero flex items-center justify-center text-white">
-            <h1 class="text-center text-5xl py-24">URL Shortener</h1>
+        <div className="min-h-89v flex flex-col aw-hero">
+        
+        <section className=" text-white flex-grow">
+            <h1 className="text-center text-5xl pt-24">URL Shortener</h1>
+            <div className="py-24">
+                <div className="bg-white flex m-auto rounded-full shadow-xl w-3/5 lg:w-3/5 sm:w-5/6">
+                    <input className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="Enter Your url"/>
+                    <div className="p-2">
+                    <button onClick={ () => this.postData() } className="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+                        go
+                    </button>
+                    </div>
+                </div>
+            </div>
         </section>
+        <footer className=" font-light text-sm text-blue-300 text-center">
+            <div className="bg-indigo-900 w-full m-auto rounded hover:bg-indigo-700 hover:text-white lg:w-1/3 md:w-1/2">
+            <a className="font-normal" href="moein98.ir">All Rights Reserved For Moein98</a>
+            </div>
+        </footer>
     </div>
     )
-};
-
+}
+}
 export default Home;
