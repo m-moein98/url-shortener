@@ -7,3 +7,6 @@ from .models import shit
 class ShitCreator(generics.ListCreateAPIView):
     queryset = shit.objects.all()
     serializer_class = ShitSerializer
+    def post(self, request, *args, **kwargs):
+        print(request.data)
+        return super().post(request, *args, **kwargs)
