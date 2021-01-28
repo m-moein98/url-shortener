@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from .models import shit
+from .models import Url
 
-class ShitSerializer(serializers.ModelSerializer):
+class UrlSerializer(serializers.ModelSerializer):
     """
     thats for api shortener api
     """
     class Meta:
-        model = shit
+        model = Url
         fields = '__all__'

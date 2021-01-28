@@ -1,13 +1,11 @@
 from django.shortcuts import render
-from .serializers import ShitSerializer
+from .serializers import UrlSerializer
 from rest_framework import generics
-from .models import shit
+from .models import Url
 # Create your views here.
 
-class ShitCreator(generics.ListCreateAPIView):
-    queryset = shit.objects.all()
-    serializer_class = ShitSerializer
+class UrlCreator(generics.ListCreateAPIView):
+    queryset = Url.objects.all()
+    serializer_class = UrlSerializer
     def post(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
-    def get(self, request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)

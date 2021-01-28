@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('api/shit/', views.ShitCreator.as_view())
+    path('api/url_shortener/', views.UrlCreator.as_view())
 ]
