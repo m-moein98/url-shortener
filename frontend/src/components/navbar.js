@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../navbar.css'
 
 const Navbar = () =>{
     return(
-        <div className="text-gray-600 flex justify-between h-10v hover:bg-gray-100">
-            <div className="my-5 mx-16 text-2xl logo transform hover:scale-110 motion-reduce:transform-none">
+        <div className="text-gray-600 flex justify-between h-10v min-h-10v hover:bg-gray-100">
+            <div className="my-auto m-12 text-2xl logo transform hover:scale-110 motion-reduce:transform-none">
                 <a href="https://moein98.ir">MOEIN98</a>
             </div>
-            <div className="my-5 mx-16 transform hover:scale-110 motion-reduce:transform-none">
+            <div className="my-auto mx-16 transform hover:scale-110 motion-reduce:transform-none">
                 <a href="https://moein98.ir/hire">
                     <svg
                         aria-hidden="true"
